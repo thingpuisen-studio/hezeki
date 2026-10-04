@@ -79,7 +79,7 @@ function renderMainCard() {
     <a
       href="${link.url}"
       ${link.url.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
-      class="social-pill p-3.5 rounded-full bg-black text-white border border-neutral-800 transition-all duration-300 hover:scale-125 hover:bg-white hover:text-black hover:shadow-2xl hover:shadow-white/20 active:scale-95 animate-slide-up flex items-center justify-center cursor-pointer"
+      class="social-pill p-3.5 rounded-full bg-transparent text-white transition-all duration-300 hover:scale-125 hover:bg-white hover:text-black hover:shadow-2xl hover:shadow-white/20 active:scale-95 animate-slide-up flex items-center justify-center cursor-pointer"
       style="animation-delay: ${0.5 + i * 0.08}s"
       title="${link.name}"
       data-name="${link.name}"
@@ -92,13 +92,13 @@ function renderMainCard() {
 
   app.innerHTML = `
     <div class="h-screen w-full bg-black flex items-center justify-center p-4">
-      <main class="w-full max-w-md px-4 animate-fade-in">
+      <main class="w-full max-w-xl px-4 animate-fade-in">
         <!-- Profile Header -->
         <header class="text-left mb-6">
           <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2 animate-slide-up cursor-default tracking-tight">
             Hezeki Intoate
           </h1>
-          <p class="text-gray-300 text-sm leading-relaxed animate-slide-up-delay cursor-default font-normal">
+          <p class="text-gray-300 text-xs sm:text-sm whitespace-nowrap leading-relaxed animate-slide-up-delay cursor-default font-normal tracking-wide">
             Civil Engineering &amp; Architecture | Tech enthusiast | ISP Services
           </p>
         </header>
