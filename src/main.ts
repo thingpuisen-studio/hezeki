@@ -62,7 +62,7 @@ function shouldShowSplash(): boolean {
 
 // Render the main landing card
 function renderMainCard() {
-  const footerText = '© 2026 Hezeki Intoate. All rights reserved.';
+  const footerText = '© 2025 Hezeki Intoate. All rights reserved.';
   const footerLettersHtml = footerText
     .split('')
     .map((char, i) => {
@@ -116,8 +116,8 @@ function renderMainCard() {
           <p class="select-none">
             ${footerLettersHtml}
           </p>
-          <p class="text-neutral-500">
-            Built by <a href="https://thingpuisen.pages.dev" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white underline underline-offset-4 decoration-neutral-700 hover:decoration-white transition-colors">Donal Muolhoi</a>
+          <p class="text-neutral-500 select-none">
+            Built by Donal Muolhoi
           </p>
         </footer>
       </main>
