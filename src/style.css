@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+  .animate-slide-up {
+    opacity: 0;
+    animation: slide-up 0.8s ease-out 0.2s forwards;
+  }
+  .animate-slide-up-delay {
+    opacity: 0;
+    animation: slide-up 0.8s ease-out 0.4s forwards;
+  }
+}
