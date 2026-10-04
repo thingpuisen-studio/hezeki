@@ -79,7 +79,7 @@ function renderMainCard() {
     <a
       href="${link.url}"
       ${link.url.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
-      class="social-pill p-3.5 rounded-full bg-transparent text-white transition-all duration-300 hover:scale-125 hover:bg-white hover:text-black hover:shadow-2xl hover:shadow-white/20 active:scale-95 animate-slide-up flex items-center justify-center cursor-pointer"
+      class="social-pill p-2.5 min-[380px]:p-3 sm:p-3.5 rounded-full bg-transparent text-white transition-all duration-300 hover:scale-125 hover:bg-white hover:text-black hover:shadow-2xl hover:shadow-white/20 active:scale-95 active:bg-white active:text-black animate-slide-up flex items-center justify-center cursor-pointer touch-manipulation min-w-[44px] min-h-[44px]"
       style="animation-delay: ${0.5 + i * 0.08}s"
       title="${link.name}"
       data-name="${link.name}"
@@ -91,20 +91,20 @@ function renderMainCard() {
     .join('');
 
   app.innerHTML = `
-    <div class="h-screen w-full bg-black flex items-center justify-center p-4">
-      <main class="w-full max-w-xl px-4 animate-fade-in">
+    <div class="min-h-screen min-h-[100dvh] w-full bg-black flex items-center justify-center p-4 sm:p-6">
+      <main class="w-full max-w-xl px-1 sm:px-4 py-6 animate-fade-in flex flex-col justify-center">
         <!-- Profile Header -->
-        <header class="text-left mb-6">
-          <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2 animate-slide-up cursor-default tracking-tight">
+        <header class="text-left mb-6 sm:mb-8">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 animate-slide-up cursor-default tracking-tight">
             Hezeki Intoate
           </h1>
-          <p class="text-gray-300 text-xs sm:text-sm whitespace-nowrap leading-relaxed animate-slide-up-delay cursor-default font-normal tracking-wide">
+          <p class="text-gray-300 text-[11px] min-[380px]:text-xs sm:text-sm whitespace-nowrap leading-relaxed animate-slide-up-delay cursor-default font-normal tracking-tight sm:tracking-wide">
             Civil Engineering &amp; Architecture | Tech enthusiast | ISP Services
           </p>
         </header>
 
         <!-- Social & Navigation Icons -->
-        <nav aria-label="Social and page links" class="flex items-center justify-between w-full mb-8 px-1">
+        <nav aria-label="Social and page links" class="flex items-center justify-between w-full mb-8 sm:mb-10 px-0.5 sm:px-1">
           ${linksHtml}
         </nav>
 
@@ -112,11 +112,11 @@ function renderMainCard() {
         <div id="modal-container" class="hidden"></div>
 
         <!-- Interactive Footer with Credits -->
-        <footer class="text-left pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs font-mono text-neutral-500">
-          <p class="select-none">
+        <footer class="text-left pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 text-xs font-mono text-neutral-500">
+          <p class="select-none text-[11px] sm:text-xs">
             ${footerLettersHtml}
           </p>
-          <p class="text-neutral-500 select-none">
+          <p class="text-neutral-500 select-none text-[11px] sm:text-xs">
             Built by Donal Muolhoi
           </p>
         </footer>
@@ -133,15 +133,15 @@ function attachModalListeners() {
 
   const showModal = (title: string, contentHtml: string) => {
     modalContainer.className =
-      'my-4 p-5 rounded-2xl border border-neutral-800 bg-neutral-950 text-neutral-200 animate-fade-in shadow-xl';
+      'my-4 p-4 sm:p-5 rounded-2xl border border-neutral-800 bg-neutral-950 text-neutral-200 animate-fade-in shadow-2xl max-h-[65vh] overflow-y-auto';
     modalContainer.innerHTML = `
       <div class="flex items-center justify-between mb-3 border-b border-neutral-800 pb-2">
-        <h2 class="text-lg font-bold text-white">${title}</h2>
-        <button id="close-modal" class="text-neutral-400 hover:text-white text-xs px-2 py-1 rounded bg-neutral-900 border border-neutral-800 hover:border-neutral-700 transition-colors cursor-pointer">
+        <h2 class="text-base sm:text-lg font-bold text-white">${title}</h2>
+        <button id="close-modal" class="text-neutral-400 hover:text-white text-xs px-2.5 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 hover:border-neutral-700 transition-colors cursor-pointer touch-manipulation">
           ✕ Close
         </button>
       </div>
-      <div class="text-sm leading-relaxed text-neutral-300 space-y-2">
+      <div class="text-xs sm:text-sm leading-relaxed text-neutral-300 space-y-2.5">
         ${contentHtml}
       </div>
     `;
@@ -175,9 +175,9 @@ function attachModalListeners() {
 // Typewriter splash screen
 function runSplashSequence() {
   app.innerHTML = `
-    <div class="min-h-screen bg-black flex items-center justify-center p-4">
-      <div class="text-center">
-        <p id="splash-text" class="text-white text-sm font-bold tracking-widest font-mono min-h-[1.5rem]"></p>
+    <div class="min-h-screen min-h-[100dvh] bg-black flex items-center justify-center p-4">
+      <div class="text-center px-4">
+        <p id="splash-text" class="text-white text-xs sm:text-sm font-bold tracking-widest font-mono min-h-[1.5rem]"></p>
       </div>
     </div>
   `;
