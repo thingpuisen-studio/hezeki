@@ -104,7 +104,7 @@ function renderMainCard() {
         </header>
 
         <!-- Social & Navigation Icons -->
-        <nav aria-label="Social and page links" class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6">
+        <nav aria-label="Social and page links" class="flex items-center justify-between w-full mb-8 px-1">
           ${linksHtml}
         </nav>
 
