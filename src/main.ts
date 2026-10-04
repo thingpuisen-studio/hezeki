@@ -111,10 +111,13 @@ function renderMainCard() {
         <!-- Dynamic Modal Container -->
         <div id="modal-container" class="hidden"></div>
 
-        <!-- Interactive Footer -->
-        <footer class="text-left pt-4 border-t border-neutral-800">
-          <p class="text-neutral-500 text-xs font-mono select-none">
+        <!-- Interactive Footer with Credits -->
+        <footer class="text-left pt-4 border-t border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs font-mono text-neutral-500">
+          <p class="select-none">
             ${footerLettersHtml}
+          </p>
+          <p class="text-neutral-500">
+            Built by <a href="https://thingpuisen.pages.dev" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white underline underline-offset-4 decoration-neutral-700 hover:decoration-white transition-colors">Donal Muolhoi</a>
           </p>
         </footer>
       </main>
