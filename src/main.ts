@@ -156,7 +156,12 @@ function attachModalListeners() {
   };
 
   const checkHash = () => {
-    if (window.location.hash === '#about') {
+    const isAboutPath =
+      window.location.hash === '#about' ||
+      window.location.pathname === '/about' ||
+      window.location.pathname === '/about/';
+
+    if (isAboutPath) {
       showModal(
         'About Hezeki Intoate',
         `
